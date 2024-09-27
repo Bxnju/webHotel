@@ -1,0 +1,131 @@
+﻿@page
+@model webHotel.Pages.TuReservaModel
+@{
+	ViewData["Title"] = "Tu Reserva";
+}
+
+@if (!LoginModel.Exitoso)
+{
+
+	<script>
+
+		alert("No has iniciado sesion.");
+		window.location.href = "/Login";
+
+	</script>
+
+}
+else
+{
+
+	<link rel="stylesheet" href="~/css/tureserva.css" asp-append-version="true" />
+
+	<div id="page-loader">
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+</div>
+
+<script type="text/javascript">
+	window.onload = function(){
+	var contenedor = document.getElementById('page-loader');
+
+	contenedor.style.visibility = 'hidden';
+	contenedor.style.opacity = 0;
+}
+</script>
+
+	<header class="navbar visible">
+		<h2>Hotel BenjuPorras</h2>
+		<nav>
+			<a asp-area="" asp-page="/IndexIngresado"><span class="material-icons">home</span>Inicio</a>
+			<a asp-area="" asp-page="/TuReserva"><span class="material-icons">event</span>Tu reserva</a>
+			<a asp-area="" asp-page="/Tienda"><span class="material-icons">store</span>Tienda</a>
+			<a asp-area="" asp-page="/Restaurante"><span class="material-icons">restaurant</span>Restaurante</a>
+			<a asp-area="" asp-page="/Servicio"><span class="material-icons">local_laundry_service</span>Servicio</a>
+			<span class="welcome">Welcome @LoginModel.usuarioGlobal.UsuarioLogin</span><form method="post"><button type="submit" asp-page-handler="Logout"><span class="material-icons">logout</span>Salir</button></form>
+		</nav>
+	</header>
+
+
+<main class="main_tureserva">
+	<h2>Tu Reserva</h2>
+		@if (Model.ExitoCheckIn)
+		{
+			<h4 style="color: green; margin: 1em 0; font-family: var(--poppins);">Check-in realizado con Exito. Ahora puedes comprar y solicitar servicios.</h4>
+			Model.ExitoCheckIn = false;
+		}
+		@if (Model.ErrorCheckIn)
+		{
+			<h4 style="color: red; margin: 1em 0; font-family: var(--poppins);">Al parecer ya habias hecho Check-In.</h4>
+			Model.ErrorCheckIn = false;
+		}
+	<div class="contenedor_datos_tureserva">
+		<div class="datos_tureserva">
+			<did class="dato">Numero de Desayunos: @Model.NroDesayunos</did>
+			<did class="dato">Numero de Almuerzos: @Model.NroAlmuerzos</did>
+			<did class="dato">Numero de Cenas: @Model.NroCenas</did>
+			<did class="dato">Numero de Planchadas: @Model.NroPlanchadas</did>
+			<did class="dato">Numero de Lavadas: @Model.NroLavadas</did>
+			<did class="dato">Numero de Gaseosas: @Model.NroGaseosas</did>
+			<did class="dato">Numero de Kits de Aseo: @Model.NroKits</did>
+			<did class="dato">Numero de Batas: @Model.NroBatas</did>
+			<did class="dato">Numero de Licores: @Model.NroLicores</did>
+			<did class="dato">Numero de Vinos: @Model.NroVinos</did>
+			<did class="dato">Numero de Aguas: @Model.NroAguas</did>
+			<did class="dato">Numero de Servicios: @Model.NroServicios</did>
+			<did class="dato">Valor de cuenta (Restaurante): @Model.ValorRestaurante</did>
+			<did class="dato">Valor de cuenta (Lavanderia): @Model.ValorLavanderia</did>
+			<did class="dato">Valor de cuenta (Tienda): @Model.ValorTienda</did>
+			<did class="dato">Valor de cuenta (IVA): @Model.ValorIVA</did>
+				<did class="dato">Valor de cuenta (Estadia): @Model.ValorEstadia</did>
+			<did class="dato">Valor de cuenta (Seguro): @Model.ValorSeguro</did>
+			<did class="dato">Valor de cuenta (Descuento): @Model.ValorDescuento</did>
+			<did class="dato">Valor de cuenta (Servicios): @Model.ValorServicios</did>
+				<did class="dato">
+					Tipo de Cuarto: @switch (Model.TipoHabitacion)
+					{
+						case "b_Hotel.Clases.Habitacion_Sencilla": Model.TipoHabitacion = "Sencilla"; break;
+						case "b_Hotel.Clases.Habitacion_Ejecutiva": Model.TipoHabitacion = "Ejecutiva"; break;
+						case "b_Hotel.Clases.Habitacion_Suite": Model.TipoHabitacion = "Suite"; break;
+						default: break;
+					}@Model.TipoHabitacion</did>
+			<did class="dato">Total Reserva: $@Model.TotalReserva COP</did>
+		</div>
+		<div class="productos_tureserva">
+			<h2>Productos:</h2>
+			@foreach (var producto in Model.reservaActual.ResProductos)
+				{
+					<div class="producto">
+						@producto.Type <span style="padding: 0.5em; background: #00AF0C;, color: var(--white); font-size: 1.3em; margin-left: 1em; border-radius: 1em;"> $ @producto.Precio COP</span>
+					</div>
+				}
+		</div>
+		<div class="flotante">
+
+				<form method="post">
+					<button type="submit" name="checkin" asp-page-handler="CheckIn" value="Check-In">Check-In</button>
+				</form>
+				<form method="post">
+					<button type="submit" name="checkout" asp-page-handler="CheckOut" value="Check-Out">Check-Out</button>
+				</form>
+        </div>
+	</div>
+</main>
+
+<footer>
+	<div class="derechos">
+		© Todos los derechos reservados - Benju 2023
+	</div>
+	<div class="titulo">
+		Hotel BenjuPorras
+	</div>
+	<div class="faces">
+		Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+	</div>
+</footer>
+
+}
+

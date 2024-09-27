@@ -1,0 +1,194 @@
+@import url('site.css');
+
+.main_tienda{
+	margin-top: 6em;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.main_tienda .titulo{
+	display: inline-block;
+	padding: 0.5em 1em;
+	border-radius: 2em;
+	background: var(--dark-blue);
+	color: var(--white);
+	font-family: var(--merri);
+	margin-bottom: 2em;
+}
+
+.main_tienda .lista_productos{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 4em em;
+}
+
+.flotante{
+	position: fixed;
+	display: flex;
+	font-family: var(--poppins);
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to top, rgba(15, 35, 73, 1), transparent);
+	padding: 3em 0;
+	gap: 2em;
+	height: 10%;
+	width: 100vw;
+	bottom: 0;
+	color: var(--white);
+	left: 0;
+}
+
+.checkbox-input input[type="checkbox"]{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	border: 2px solid var(--blue);
+	outline: none;
+	cursor: pointer;
+}
+
+.checkbox-input input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkbox-input input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.checkbox-input input[type="checkbox"]:focus {
+  box-shadow: 0 0 3px #007bff;
+}
+
+input[type="submit"] {
+	padding: 1em 3em;
+	background: var(--mid-blue);
+	transition: .2s;
+	cursor: pointer;
+	border-radius: 2em;
+	border: none;
+	outline: none;
+	color: var(--white);
+	font-family: var(--poppins);
+}
+
+input[type="submit"]:hover {
+	box-shadow: 0 4px 1em var(--blue);
+}
+
+
+.main_tienda .lista_productos .styled-table { 
+	border-collapse: collapse;
+	font-size: 1em;
+	min-width: 95%;
+	border-radius: 2em;
+	overflow: hidden;
+	margin-bottom: 2em;
+	box-shadow: 8px 8px 20px rgba(0, 0, 0, .5);
+}
+
+.main_tienda .lista_productos .styled-table td { 
+	padding: 2em 1em;
+}
+
+.main_tienda .lista_productos .styled-table tbody tr {
+	font-family: var(--poppins);
+	background: var(--mid-blue);
+	color: var(--white);
+	text-align: center;
+	height: 4em;
+	padding: 4em 1em;
+	box-shadow: 4px 0 20px rgba(0, 0, 0, .5);
+} 
+
+.main_tienda .lista_productos .styled-table tbody tr td > img{
+	width: 80px;
+	height: 80px;
+	background: red;
+	border-radius: 1em;
+	object-fit: cover;
+	margin-left: 2em;
+} 
+
+.main_tienda .lista_productos .styled-table tbody tr td:has(.titulo_producto){
+	width: 20em;
+}
+
+.main_tienda .lista_productos .styled-table tbody tr .titulo_producto{
+	display: inline-block;
+	font-family: var(--merri);
+	font-size: 1.3em;
+	padding: 1em;
+	width: 100%;
+	min-width: 10em;
+	border-radius: 2em;
+	background: var(--dark-blue);
+	color: var(--white);
+	margin-left: 1em;
+} 
+
+.main_tienda .lista_productos .styled-table tbody tr .precio_producto .price{
+	padding: 0.8em;
+	font-size: 1.2em;
+	margin-left: 3em;
+	border-radius: 2em;
+	background: #00AF0C;
+	color: var(--white);
+} 
+
+.quantity-input {
+	display: flex;
+	justify-content: center;
+	font-family: var(--poppins);
+	align-items: center;
+	margin-right: 2em;
+}
+
+.quantity-input button {
+	padding: 1rem;
+	height: 2em;
+	width: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-family: var(--poppins);
+	background: var(--blue);
+	color: var(--white);
+	transition: .3s;
+  	box-shadow: 2px 2px 6px rgba(0, 0, 0, .5);
+}
+
+.quantity-input button:active{
+	box-shadow: 0 0 0 rgba(0, 0, 0, .5);
+}
+
+.quantity-input input {
+	width: 50px;
+	font-size: 1.2rem;
+	padding-left: .8em;
+	border: none;
+	font-family: var(--poppins);
+	color: var(--white);
+	outline: none;
+	background: transparent;
+	cursor: default;
+	text-align: center;
+}

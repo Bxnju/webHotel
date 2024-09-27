@@ -1,0 +1,148 @@
+@import url('site.css');
+
+.main_tureserva{
+	height: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 6em auto;
+	padding: 2rem;
+	width: 100%;
+}
+
+.main_tureserva h2{
+	display: inline-block;
+	height: auto;
+	padding: 0.5em 1em;
+	margin: 1em 0 2em 0;
+	border-radius: 2em;
+	background: var(--dark-blue);
+	color: var(--white);
+	font-family: var(--merri);
+}
+
+.main_tureserva .contenedor_datos_tureserva{
+	padding: 0 5em;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.main_tureserva .contenedor_datos_tureserva .datos_tureserva{
+	width: 75%;
+	height: auto;
+	background: var(--dark-blue);
+	display: flex;
+	justify-content: center;
+	padding: 4em 0 0 2em;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 5%;
+	border-radius: 2em;
+	overflow: hidden;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.main_tureserva .contenedor_datos_tureserva .datos_tureserva .dato{
+	width: 25%;
+	margin-bottom: 2em;
+	padding: 2em;
+	font-family: var(--poppins);
+	font-size: .8em;
+	text-align: center;
+	border-radius: 2em;
+	background: var(--mid-blue);
+	color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.main_tureserva .contenedor_datos_tureserva .datos_tureserva .dato:last-of-type{
+	width: 40%;
+	margin: 2em 0 4em 0;
+	padding: 2em;
+	font-family: var(--poppins);
+	font-size: .8em;
+	text-align: center;
+	border-radius: 2em;
+	background: #006908;
+}
+
+.main_tureserva .contenedor_datos_tureserva .productos_tureserva{
+	width: 25%;
+	height: 80vh;
+	background: var(--mid-blue);
+	display: flex;
+	justify-content: center;
+	padding: 2em 1em;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 5%;
+	overflow: auto;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+}
+
+.main_tureserva .contenedor_datos_tureserva .productos_tureserva::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.main_tureserva .contenedor_datos_tureserva .productos_tureserva::-webkit-scrollbar:vertical {
+    width: 1.5em;
+    background: var(--white);
+    padding: .4em;
+}
+
+.main_tureserva .contenedor_datos_tureserva .productos_tureserva::-webkit-scrollbar-thumb {
+    background-color: var(--dark-blue);
+    box-shadow: 0 0 15px #000;
+}
+
+.main_tureserva .contenedor_datos_tureserva .productos_tureserva .producto{
+	width: 95%;
+	margin-bottom: 2em;
+	padding: 2em;
+	font-family: var(--poppins);
+	font-size: .8em;
+	text-align: center;
+	border-radius: 2em;
+	background: var(--blue);
+	color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.flotante{
+	position: fixed;
+	display: flex;
+	font-family: var(--poppins);
+	justify-content: space-around;
+	align-items: center;
+	background: linear-gradient(to top, rgba(15, 35, 73, 1), transparent);
+	padding: 3em 0;
+	gap: 2em;
+	height: 10%;
+	width: 100vw;
+	bottom: 0;
+	color: var(--white);
+	left: 0;
+}
+
+button[type="submit"] {
+	padding: 1em 3em;
+	background: var(--mid-blue);
+	transition: .2s;
+	cursor: pointer;
+	border-radius: 2em;
+	border: none;
+	outline: none;
+	color: var(--white);
+	font-family: var(--poppins);
+}
+
+button[type="submit"]:hover {
+	box-shadow: 0 4px 1em var(--blue);
+}

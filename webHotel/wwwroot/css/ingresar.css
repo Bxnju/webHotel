@@ -1,0 +1,122 @@
+@import url('site.css');
+
+
+/*-----MAIN INGRESO-----*/
+
+.main_ingreso{
+	padding: 10em 0 4em 0;
+	min-height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ccc;
+}
+
+.main_ingreso .contenedor_form{
+	background: var(--dark-blue);
+	width: clamp(500px, 60%, 800px);
+	padding: 3em 2em;
+	border-bottom-left-radius: 3em;
+	border-top-right-radius: 3em;
+	box-shadow: -10px -10px 2em var(--white), 8px 8px 2em var(--dark-blue);
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	text-align: center;
+}
+
+.main_ingreso .contenedor_form::before{
+	content: "";
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	background: linear-gradient(90deg, var(--dark-blue), var(--light-blue));
+	position: absolute;
+	z-index: 2;
+	filter: opacity(30%);
+	box-shadow: 0 0 3em #000;
+	transition: 0.8s;
+	bottom: calc(100% + 2em);
+	right: calc(100% - 2em);
+}
+
+.main_ingreso .contenedor_form:hover::before{
+	bottom: 10em;
+	right: 60%;
+}
+
+.main_ingreso .contenedor_form h2{
+	font-family: var(--merri);
+	margin-bottom: 1em;
+	color: var(--blue);
+	font-size: calc(100% + 10px);
+	position: relative;
+	z-index: 3;
+	left: 0.3em;
+	text-shadow: 1px 1px 2px var(--dark);
+}
+
+.main_ingreso .contenedor_form .formulario{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 3;
+	align-items: center;
+}
+
+
+.main_ingreso .contenedor_form .formulario input{
+	width: 80%;
+	border-radius: 2em;
+	border: none;
+	outline: none;
+	font-family: var(--poppins);
+	padding: 1em 1em 1em 2em;
+}
+
+.main_ingreso .contenedor_form .formulario{
+	gap: 1em;
+}
+
+.main_ingreso .contenedor_form .formulario input{
+	gap: 1em;
+	padding: 1em 1em 1em 2em;
+	border-radius: 2em;
+	font-family: var(--poppins);
+	border: none;
+	outline: none;
+}
+
+/*----- CUSTOMIZO ALGUNOS INPUTS -----*/
+
+.main_ingreso .contenedor_form .formulario input{
+	font-size: 0.9em;
+	color: var(--white);
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
+}
+
+/*----- CAMBIO EL COLOR DEL PLACEHOLDER -----*/
+
+.main_ingreso .contenedor_form .formulario input::placeholder{
+	color: #ccc;
+}
+
+/*----- CAMBIO EL ESTILO DEL INPUT SUBMIT -----*/
+
+.main_ingreso .contenedor_form .formulario input:nth-child(3){
+	width: 50%;
+	margin: 1em auto 0 auto;
+	background: var(--mid-blue);
+	transition: .2s;
+	cursor: pointer;
+}
+
+.main_ingreso .contenedor_form .formulario input:nth-child(3):hover{
+    box-shadow: 0 4px 1em var(--blue);
+}
+
+/*----- AGREGO ANIMACION PARA INPUT:FOCUS -----*/
+
+.main_ingreso .contenedor_form .formulario input:focus{
+	animation: input-pulse 3s ease infinite;
+}

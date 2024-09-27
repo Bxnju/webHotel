@@ -1,0 +1,178 @@
+@import url('site.css');
+
+
+/*-----MAIN RESERVA-----*/
+
+.main_reservar{
+	padding: 10em 0 4em 0;
+	min-height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ccc;
+}
+
+.main_reservar .contenedor_form{
+	background: var(--dark-blue);
+	width: clamp(500px, 60%, 800px);
+	padding: 3em 2em;
+	border-top-left-radius: 3em;
+	border-bottom-right-radius: 3em;
+	box-shadow: -10px -10px 2em var(--white), 8px 8px 2em var(--dark-blue);
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.main_reservar .contenedor_form::before{
+	content: "";
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	background: linear-gradient(90deg, var(--mid-blue), var(--blue));
+	position: absolute;
+	z-index: 2;
+	filter: opacity(30%);
+	box-shadow: 0 0 3em #000;
+	transition: 0.8s;
+	top: calc(100% + 2em);
+	left: calc(100% - 2em);
+}
+
+.main_reservar .contenedor_form:hover::before{
+	top: 10em;
+	left: 70%;
+}
+
+.main_reservar .contenedor_form::after{
+	content: "";
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: linear-gradient(90deg, var(--mid-blue), var(--blue));
+	position: absolute;
+	z-index: 2;
+	filter: opacity(30%);
+	box-shadow: 0 0 3em #000;
+	transition: 0.8s;
+	bottom: calc(100% + 2em);
+	right: calc(100% - 2em);
+}
+
+.main_reservar .contenedor_form:hover::after{
+	bottom: 13em;
+	right: 75%;
+}
+
+.main_reservar .contenedor_form h2{
+	font-family: var(--merri);
+	margin-bottom: 1em;
+	color: var(--blue);
+	font-size: calc(100% + 10px);
+	position: relative;
+	z-index: 3;
+	left: 0.3em;
+	text-shadow: 1px 1px 2px var(--dark);
+}
+
+.main_reservar .contenedor_form .formulario{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 3;
+}
+
+.main_reservar .contenedor_form .formulario .inputs_1{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.main_reservar .contenedor_form .formulario .inputs_1 div{
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+}
+
+.main_reservar .contenedor_form .formulario .inputs_1 div input, .main_reservar .contenedor_form .formulario .inputs_1 div select{
+	width: 50%;
+	border-radius: 2em;
+	border: none;
+	outline: none;
+	font-family: var(--poppins);
+	padding: 1em 1em 1em 2em;
+}
+
+.main_reservar .contenedor_form .formulario{
+	gap: 1em;
+}
+
+.main_reservar .contenedor_form .formulario input, .main_reservar .contenedor_form .formulario select, .main_reservar .contenedor_form .formulario button{
+	gap: 1em;
+	padding: 1em 1em 1em 2em;
+	border-radius: 2em;
+	font-family: var(--poppins);
+	border: none;
+	outline: none;
+}
+
+.main_reservar .contenedor_form .formulario select option{
+	font-size: 1.2em;
+	background: var(--mid-blue);
+	color: var(--white);
+	border-radius: 1em;
+	padding: 1em;
+}
+
+/*----- CUSTOMIZO ALGUNOS INPUTS -----*/
+
+.main_reservar .contenedor_form .formulario .inputs_1 div input, .main_reservar .contenedor_form .formulario .inputs_1 div select, .main_reservar .contenedor_form .formulario input, .main_reservar .contenedor_form .formulario select, .main_reservar .contenedor_form .formulario button{
+	font-size: 0.9em;
+	color: var(--white);
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
+}
+
+/*----- AGREGO FLECHA PERSONALIZADA AL SELECT -----*/
+
+.main_reservar .contenedor_form .formulario .inputs_1 div select, .main_reservar .contenedor_form .formulario select{
+	appearance: none;
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../imgs/flecha_select.png');
+  	background-position: 95%;
+  	background-repeat: no-repeat;
+  	padding-right: 40px;
+  	color: #ccc;
+}
+
+/*----- CAMBIO EL COLOR DEL PLACEHOLDER -----*/
+
+.main_reservar .contenedor_form .formulario .inputs_1 div input::placeholder, .main_reservar .contenedor_form .formulario input::placeholder{
+	color: #ccc;
+}
+
+/*----- RETIRO LOS ESTILOS DE LOS INPUTS TYPE NUMBER -----*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*----- CAMBIO EL ESTILO DEL INPUT SUBMIT -----*/
+
+.main_reservar .contenedor_form .formulario button{
+	width: 50%;
+	margin: 1em auto 1em auto;
+	background: var(--mid-blue);
+	transition: .2s;
+	cursor: pointer;
+}
+
+.main_reservar .contenedor_form .formulario button:hover{
+    box-shadow: 0 4px 1em var(--blue);
+}
+
+/*----- AGREGO ANIMACION PARA INPUT:FOCUS -----*/
+
+.main_reservar .contenedor_form .formulario .inputs_1 div input:focus, .main_reservar .contenedor_form .formulario .inputs_1 div select:focus, .main_reservar .contenedor_form .formulario input:focus, .main_reservar .contenedor_form .formulario select:focus{
+	animation: input-pulse 3s ease infinite;
+}

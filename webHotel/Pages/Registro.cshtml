@@ -1,0 +1,104 @@
+﻿@page
+@model webHotel.Pages.RegistroModel
+@{
+    ViewData["Title"] = "Registro";
+}
+
+
+@if (Model.ExitoRegistro)
+{
+	<script>
+
+		alert("Registro Exitoso. Ahora puede ingresar al sistema.");
+		window.location.href = "/Login";
+
+	</script>
+}
+
+
+<link rel="stylesheet" href="~/css/registro.css" asp-append-version="true" />
+
+<div id="page-loader">
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+</div>
+
+<script type="text/javascript">
+
+	window.onload = function () {
+
+		var contenedor = document.getElementById('page-loader');
+
+		contenedor.style.visibility = 'hidden';
+		contenedor.style.opacity = 0;
+
+
+	}
+
+</script>
+
+<header class="navbar visible">
+	<h2>Hotel BenjuPorras</h2>
+	<nav>
+		<a asp-area="" asp-page="/Index"><span class="material-icons">home</span>Inicio</a>
+		<a asp-area="" asp-page="/Habitaciones"><span class="material-icons">bedroom_parent</span>Habitaciones</a>
+		<a asp-area="" asp-page="/Servicios"><span class="material-icons">local_laundry_service</span>Servicios</a>
+		<a asp-area="" asp-page="/Registro"><span class="material-icons">account_circle</span>Registrarse</a>
+		<a asp-area="" asp-page="/Login"><span class="material-icons">input</span>Ingresar</a>
+	</nav>
+</header>
+
+<main class="main_registro">
+	<article class="contenedor_form">
+		<h2>Registrate</h2>
+		<form class="formulario" method="post">
+			<div class="inputs_1">
+				<div>
+					<input type="text" name="Nombre" placeholder="Nombre Completo" required>
+					<input type="number" name="Telefono" placeholder="Teléfono" maxlength="10" required>
+				</div>
+
+				<div>
+					<select name="TipoDocumento" required>
+						<option selected disabled>Tipo de Documento</option>
+						<option value="cc">CC</option>
+						<option value="ti">TI</option>
+						<option value="pa">PA</option>
+						<option value="ce">CE</option>
+					</select>
+					<input type="number" name="NroDocumento" placeholder="Numero de Documento">
+				</div>
+			</div>
+
+			<select name="Nacionalidad" required>
+				<option selected disabled>Selecciona tu Nacionalidad</option>
+				<option value="colombiana">Colombiana</option>
+				<option value="otra">Otra</option>
+			</select>
+
+			<input type="text" name="Usuario" placeholder="Nombre de Usuario">
+			<input type="password" name="Contrasenia" placeholder="Contraseña" required>
+
+			<input type="submit" asp-page-handler="Registrar" value="Registrar" name="" required>
+			@if (Model.ErrorRegistro)
+			{
+				<p style="color: red; font-family: var(--poppins); text-align: center; ">Ha ocurrido un error intentando registrarse. Intente cambiar el usuario y verifique que su longitud sea mayor a 8 caracteres.</p>
+			}
+		</form>
+	</article>
+</main>
+
+<footer>
+	<div class="derechos">
+		© Todos los derechos reservados - Benju 2023
+	</div>
+	<div class="titulo">
+		Hotel BenjuPorras
+	</div>
+	<div class="faces">
+		Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+	</div>
+</footer>

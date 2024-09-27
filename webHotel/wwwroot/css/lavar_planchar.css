@@ -1,0 +1,203 @@
+@import url('site.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 6em auto;
+  padding: 2rem;
+}
+
+.container .titulo{
+	display: inline-block;
+	padding: 0.5em 1em;
+	border-radius: 2em;
+	background: var(--dark-blue);
+	color: var(--white);
+	font-family: var(--merri);
+}
+
+#menu-form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cards{
+	display: flex;
+	flex-direction: row;
+	gap: 5em;
+	position: relative;
+}
+
+.cards .flotante{
+	position: fixed;
+	display: flex;
+	font-family: var(--poppins);
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to top, rgba(15, 35, 73, 1), transparent);
+	padding: 3em 0;
+	gap: 2em;
+	height: 10%;
+	width: 100vw;
+	bottom: 0;
+	color: var(--white);
+	left: 0;
+}
+
+.checkbox-input input[type="checkbox"]{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	border: 2px solid var(--blue);
+	outline: none;
+	cursor: pointer;
+}
+
+.checkbox-input input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkbox-input input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.checkbox-input input[type="checkbox"]:focus {
+  box-shadow: 0 0 3px #007bff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  margin: 2rem 0;
+  background: var(--mid-blue);
+  box-shadow: -10px -10px 2em var(--white), 8px 8px 2em var(--dark-blue);
+  border-radius: 1em;
+  padding: 2em 2em;
+  width: 25em;
+  text-align: center;
+  border: 3px solid var(--dark-blue);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-family: var(--poppins);
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.card .img {
+	display: block;
+	margin: 0 auto;
+	background: red;
+	width: 250px;
+	height: 250px;
+	border-radius: 1em;
+	margin-bottom: 1rem;
+}
+
+.card .img_1 {
+	background: linear-gradient(rgba(15, 35, 73, .3), rgba(15, 35, 73, .7)) ,url('https://phantom-expansion.unidadeditorial.es/3271320896aa844af6b2159a9a3ceb7f/crop/101x0/1000x600/resize/414/f/jpg/assets/multimedia/imagenes/2021/09/09/16312096232648.jpg');
+	background-size: cover;
+	background-position: top;
+}
+
+.card .img_2 {
+	background: linear-gradient(rgba(15, 35, 73, .3), rgba(15, 35, 73, .7)) ,url('https://www.cleanipedia.com/images/iohqr4whhl17/4bVfOm6VIzCT8Mh9khthfH/1540965a4bbb4c4144b5131e7464c64d/Q19fbW9fcGxhbmNoYXJfY2FtaXNhc19wYXNvX2FfcGFzb19lbl9jYXNhLmpwZw/990w-660h/c%C3%B3mo-planchar-camisas-paso-a-paso-en-casa.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+
+.card p {
+text-align: justify;
+margin-bottom: 1rem;
+}
+
+.quantity-input {
+	display: flex;
+	justify-content: center;
+	font-family: var(--poppins);
+	align-items: center;
+}
+
+.quantity-input button {
+	padding: 1rem;
+	height: 2em;
+	width: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-family: var(--poppins);
+	background: var(--blue);
+	color: var(--white);
+	transition: .3s;
+  	box-shadow: 2px 2px 6px rgba(0, 0, 0, .5);
+}
+
+.quantity-input button:active{
+	box-shadow: 0 0 0 rgba(0, 0, 0, .5);
+}
+
+.quantity-input input {
+	width: 50px;
+	text-align: center;
+	font-size: 1.2rem;
+	border: none;
+	font-family: var(--poppins);
+	color: var(--white);
+	outline: none;
+	background: transparent;
+	cursor: default;
+}
+
+.checkbox-input {
+	margin: 2rem 0;
+}
+
+input[type="submit"] {
+	padding: 1em 3em;
+	background: var(--mid-blue);
+	transition: .2s;
+	cursor: pointer;
+	border-radius: 2em;
+	border: none;
+	outline: none;
+	color: var(--white);
+	font-family: var(--poppins);
+}
+
+input[type="submit"]:hover {
+	box-shadow: 0 4px 1em var(--blue);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

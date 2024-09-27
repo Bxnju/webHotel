@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = webHotel
+build_property.RootNamespace = webHotel
+build_property.ProjectDir = C:\Users\bxnju\OneDrive\Escritorio\Compartida Benju\Hotel POO\webHotel\webHotel\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bxnju\OneDrive\Escritorio\Compartida Benju\Hotel POO\webHotel\webHotel
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Habitaciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGFiaXRhY2lvbmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/IndexIngresado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXhJbmdyZXNhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/IndexRegistrado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXhSZWdpc3RyYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Pagar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Reservar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Restaurante.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Servicio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Servicios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljaW9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Tienda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGllbmRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/TuReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHVSZXNlcnZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bxnju/OneDrive/Escritorio/Compartida Benju/Hotel POO/webHotel/webHotel/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zo2yxhva7w

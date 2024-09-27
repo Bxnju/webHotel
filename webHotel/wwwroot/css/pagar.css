@@ -1,0 +1,60 @@
+@import url('site.css');
+
+.main_pago{
+	height: 100vh;
+	margin-top: 6em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main_pago .contenedor_pago{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 80%;
+	background: green;
+	border-radius: 2em;
+	box-shadow: 10px 10px 2em rgba(0, 0, 0, .5);
+	padding: 4em 3em;
+}
+
+.main_pago .contenedor_pago .titulo_pago{
+	padding: 1em;
+	background: darkgreen;
+	font-size: 2em;
+	font-weight: bold;
+	color: var(--white);
+	font-family: var(--merri);
+	border-radius: 2em;
+	margin-bottom: 2em;
+}
+
+.main_pago .contenedor_pago .confirmacion{
+	font-size: 1.5em;
+	font-family: var(--poppins);
+	text-align: center;
+	color: var(--white);
+}
+
+.main_pago .contenedor_pago button{
+	padding: 1em 4em;
+	font-size: 1.3em;
+	border-radius: 2em;
+	border: none;
+	outline: none;
+	margin-top: 2em;
+	font-family: var(--poppins);
+	color: var(--white);
+	font-weight: bold;
+	background:  #00AF0C;
+	cursor: pointer;
+	transition: .4s;
+	box-shadow: 5px 0 15px darkgreen;
+}
+
+.main_pago .contenedor_pago button:hover{
+	box-shadow: 0 0 0 darkgreen;
+}
+

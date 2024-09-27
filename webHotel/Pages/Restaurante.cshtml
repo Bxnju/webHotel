@@ -1,0 +1,145 @@
+﻿@page
+@model webHotel.Pages.RestauranteModel
+@{
+	ViewData["Title"] = "Restaurante";
+}
+
+@if (!LoginModel.Exitoso)
+{
+
+	<script>
+
+		alert("No has iniciado sesion.");
+		window.location.href = "/Login";
+
+	</script>
+
+}
+else
+{
+
+	<link rel="stylesheet" href="~/css/restaurante.css" asp-append-version="true" />
+
+	<div id="page-loader">
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var contenedor = document.getElementById('page-loader');
+
+			contenedor.style.visibility = 'hidden';
+			contenedor.style.opacity = 0;
+		}
+	</script>
+
+	<header class="navbar visible">
+		<h2>Hotel BenjuPorras</h2>
+		<nav>
+			<a asp-area="" asp-page="/IndexIngresado"><span class="material-icons">home</span>Inicio</a>
+			<a asp-area="" asp-page="/TuReserva"><span class="material-icons">event</span>Tu reserva</a>
+			<a asp-area="" asp-page="/Tienda"><span class="material-icons">store</span>Tienda</a>
+			<a asp-area="" asp-page="/Restaurante"><span class="material-icons">restaurant</span>Restaurante</a>
+			<a asp-area="" asp-page="/Servicio"><span class="material-icons">local_laundry_service</span>Servicio</a>
+			<span class="welcome">Welcome @LoginModel.usuarioGlobal.UsuarioLogin</span><form method="post"><button type="submit" asp-page-handler="Logout"><span class="material-icons">logout</span>Salir</button></form>
+		</nav>
+	</header>
+
+
+	<div class="container">
+		<h2 class="titulo">Restaurante</h2>
+		@if (Model.ErrorCheckIn)
+		{
+			<h4 style="color: red; margin: 1em 0; font-family: var(--poppins);">No puedes realizar una compra sin haber realizado primero el check-in.</h4>
+			Model.ErrorCheckIn = false;
+		}
+		@if (Model.CompraExitosa)
+		{
+			<h4 style="color: green; margin: 1em 0; font-family: var(--poppins);">Se han pedido los alimentos exitosamente..</h4>
+			Model.CompraExitosa = false;
+		}
+		<form id="menu-form" method="post">
+			<div class="cards">
+				<div class="card">
+					<h2>Desayunos</h2>
+					<div class="img img_1"></div>
+					<div class="quantity-input">
+						<button type="button" class="decrement-btn">-</button>
+						<input type="number" name="Desayunos" value="0" min="0" max="10" readonly />
+						<button type="button" class="increment-btn">+</button>
+					</div>
+				</div>
+				<div class="card">
+					<h2>Almuerzos</h2>
+					<div class="img img_2"></div>
+					<div class="quantity-input">
+						<button type="button" class="decrement-btn">-</button>
+						<input type="number" name="Almuerzos" value="0" min="0" max="10" readonly />
+						<button type="button" class="increment-btn">+</button>
+					</div>
+				</div>
+				<div class="card">
+					<h2>Cenas</h2>
+					<div class="img img_3"></div>
+					<div class="quantity-input">
+						<button type="button" class="decrement-btn">-</button>
+						<input type="number" name="Cenas" value="0" min="0" max="10" readonly />
+						<button type="button" class="increment-btn">+</button>
+					</div>
+				</div>
+				<div class="flotante">
+					<div class="checkbox-input">
+						<label>
+							<input type="checkbox" name="ServicioHabitacion" />
+							¿Desea servicio a la habitación?
+						</label>
+					</div>
+					<input type="submit" asp-page-handler="ComprarRestaurante" value="Comprar">
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script>
+
+		const decrementButtons = document.querySelectorAll('.decrement-btn');
+		const incrementButtons = document.querySelectorAll('.increment-btn');
+		const quantityInputs = document.querySelectorAll('.quantity-input input');
+		const menuForm = document.querySelector('#menu-form');
+
+		decrementButtons.forEach((button, index) => {
+			button.addEventListener('click', () => {
+				if (quantityInputs[index].value > 0) {
+					quantityInputs[index].value--;
+				}
+			});
+		});
+
+		incrementButtons.forEach((button, index) => {
+			button.addEventListener('click', () => {
+				if (quantityInputs[index].value < 10) {
+					quantityInputs[index].value++;
+				}
+			});
+		});
+
+	</script>
+
+	<footer>
+		<div class="derechos">
+			© Todos los derechos reservados - Benju 2023
+		</div>
+		<div class="titulo">
+			Hotel BenjuPorras
+		</div>
+		<div class="faces">
+			Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+		</div>
+	</footer>
+
+}
+

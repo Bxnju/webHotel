@@ -1,0 +1,73 @@
+﻿@page
+@model webHotel.Pages.PagarModel
+@{
+	ViewData["Title"] = "Pago";
+}
+
+@if (!LoginModel.Exitoso)
+{
+
+	<script>
+
+		alert("No has iniciado sesion.");
+		window.location.href = "/Login";
+
+	</script>
+
+}
+else
+{
+	<link rel="stylesheet" href="~/css/pagar.css" asp-append-version="true" />
+
+	<div id="page-loader">
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var contenedor = document.getElementById('page-loader');
+
+			contenedor.style.visibility = 'hidden';
+			contenedor.style.opacity = 0;
+		}
+	</script>
+
+	<header class="navbar visible">
+		<h2>Hotel BenjuPorras</h2>
+		<nav>
+			<a asp-area="" asp-page="/IndexRegistrado"><span class="material-icons">home</span>Inicio</a>
+			<a asp-area="" asp-page="/Reservar"><span class="material-icons">event</span>Reservar</a>
+			<span class="welcome">Welcome @LoginModel.usuarioGlobal.UsuarioLogin</span><form method="post"><button type="submit" asp-page-handler="Logout"><span class="material-icons">logout</span>Salir</button></form>
+		</nav>
+	</header>
+
+	<main class="main_pago">
+		<article class="contenedor_pago">
+			<div class="titulo_pago">
+				Check-out y Pago
+			</div>
+			<div class="confirmacion">
+				@LoginModel.usuarioGlobal.Nombre, estas seguro que quieres pagar tu reserva por el total de: $@Model.precioAPagar COP ?
+			</div>
+			<form method="post"><button type="submit" asp-page-handler="Pagar" name="pagar">Pagar</button></form>
+		</article>
+	</main>
+
+	<footer>
+		<div class="derechos">
+			© Todos los derechos reservados - Benju 2023
+		</div>
+		<div class="titulo">
+			Hotel BenjuPorras
+		</div>
+		<div class="faces">
+			Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+		</div>
+	</footer>
+
+}
+

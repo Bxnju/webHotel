@@ -1,0 +1,68 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<div id="page-loader">
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+</div>
+
+<script type="text/javascript">
+	window.onload = function () {
+		var contenedor = document.getElementById('page-loader');
+
+		contenedor.style.visibility = 'hidden';
+		contenedor.style.opacity = 0;
+	}
+</script>
+
+<header class="navbar visible">
+	<h2>Hotel BenjuPorras</h2>
+	<nav>
+		<a asp-area="" asp-page="/Index"><span class="material-icons">home</span>Inicio</a>
+		<a asp-area="" asp-page="/Habitaciones"><span class="material-icons">bedroom_parent</span>Habitaciones</a>
+		<a asp-area="" asp-page="/Servicios"><span class="material-icons">local_laundry_service</span>Servicios</a>
+		<a asp-area="" asp-page="/Registro"><span class="material-icons">account_circle</span>Registrarse</a>
+		<a asp-area="" asp-page="/Login"><span class="material-icons">input</span>Ingresar</a>
+	</nav>
+</header>
+
+<main class="main_index">
+	<h6>Hotel BenjuPorras</h6>
+</main>
+
+<article class="nosotros" id="nosotros">
+	<h1>Somos <span class="auto-type"></span></h1>
+</article>
+
+<footer>
+	<div class="derechos">
+		© Todos los derechos reservados - Benju 2023
+	</div>
+	<div class="titulo">
+		Hotel BenjuPorras
+	</div>
+	<div class="faces">
+		Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+	</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script type="text/javascript">
+
+	var typed = new Typed(".auto-type", {
+		strings: ["Relax", "Serenidad", "Refugio", "Confort", "Placer", "Privacidad", "Exclusividad", "Calidad", "Experiencias"],
+		typeSpeed: 150,
+		backSpeed: 100,
+		loop: true
+	})
+
+</script>

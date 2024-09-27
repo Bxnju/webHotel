@@ -1,0 +1,66 @@
+@import url('site.css');
+
+.main_habitaciones{
+	width: 100%;
+	position: relative;
+}
+
+.main_habitaciones .hab{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: linear-gradient(90deg, var(--dark-blue), var(--blue));
+}
+
+.main_habitaciones .hab .left{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	padding: 2em 5em;
+	color: var(--white);
+}
+
+.main_habitaciones .hab .left h2{
+	margin-bottom: 2em;
+	font-family: var(--merri);
+	padding: 1em;
+	border-radius: 2em;
+	background: var(--mid-blue);
+	text-shadow: 2px 2px 1px #000;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, .3);
+}
+
+.main_habitaciones .hab .left p{
+	margin-bottom: 2em;
+	font-family: var(--poppins);
+}
+
+.main_habitaciones .hab .left h3{
+	font-family: var(--poppins);
+	font-size: 2em;
+}
+
+.main_habitaciones .hab .left:first-child{
+	padding-top: 3em;
+}
+
+.main_habitaciones .hab .right{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	background: rgba(0, 0, 0, .8);
+}
+
+.main_habitaciones .hab:hover .right > img{
+	filter: opacity(100%);
+}
+
+.main_habitaciones .hab .right > img{
+	width: 100%;
+	object-position: center;
+	transition: .8s;
+	filter: opacity(80%);
+}

@@ -1,0 +1,77 @@
+﻿@page
+@model webHotel.Pages.IndexRegistradoModel
+@{
+	ViewData["Title"] = "Inicio";
+}
+
+@if (!LoginModel.Exitoso)
+{
+
+	<script>
+
+		alert("No has iniciado sesion.");
+		window.location.href = "/Login";
+
+	</script>
+
+}
+else
+{
+
+	<div id="page-loader">
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var contenedor = document.getElementById('page-loader');
+
+			contenedor.style.visibility = 'hidden';
+			contenedor.style.opacity = 0;
+		}
+	</script>
+
+	<header class="navbar visible">
+		<h2>Hotel BenjuPorras</h2>
+		<nav>
+			<a asp-area="" asp-page="/IndexRegistrado"><span class="material-icons">home</span>Inicio</a>
+			<a asp-area="" asp-page="/Reservar"><span class="material-icons">event</span>Reservar</a>
+			<span class="welcome">Welcome @LoginModel.usuarioGlobal.UsuarioLogin</span><form method="post"><button type="submit" asp-page-handler="Logout"><span class="material-icons">logout</span>Salir</button></form>
+		</nav>
+	</header>
+
+	<article class="main_index_registrado" id="nosotros">
+		<h1>Eres <span class="auto-type"></span></h1>
+	</article>
+
+	<footer>
+		<div class="derechos">
+			© Todos los derechos reservados - Benju 2023
+		</div>
+		<div class="titulo">
+			Hotel BenjuPorras
+		</div>
+		<div class="faces">
+			Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+	<script type="text/javascript">
+
+		var typed = new Typed(".auto-type", {
+			strings: ["Bienvenido", "Valioso", "Especial", "Importante", "parte de NOSOTROS"],
+			typeSpeed: 150,
+			backSpeed: 100,
+			loop: true
+		})
+
+	</script>
+
+}

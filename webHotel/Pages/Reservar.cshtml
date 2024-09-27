@@ -1,0 +1,94 @@
+﻿@page
+@model webHotel.Pages.ReservarModel
+@{
+    ViewData["Title"] = "Reservar";
+}
+
+@if (!LoginModel.Exitoso)
+{
+
+	<script>
+
+		alert("No has iniciado sesion.");
+		window.location.href = "/Login";
+
+	</script>
+
+}
+else
+{
+	<link rel="stylesheet" href="~/css/reservar.css" asp-append-version="true" />
+
+	<div id="page-loader">
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var contenedor = document.getElementById('page-loader');
+
+			contenedor.style.visibility = 'hidden';
+			contenedor.style.opacity = 0;
+		}
+	</script>
+
+	<header class="navbar visible">
+		<h2>Hotel BenjuPorras</h2>
+		<nav>
+			<a asp-area="" asp-page="/IndexRegistrado"><span class="material-icons">home</span>Inicio</a>
+			<a asp-area="" asp-page="/Reservar"><span class="material-icons">event</span>Reservar</a>
+			<span class="welcome">Welcome @LoginModel.usuarioGlobal.UsuarioLogin</span><form method="post"><button type="submit" asp-page-handler="Logout"><span class="material-icons">logout</span>Salir</button></form>
+		</nav>
+	</header>
+
+	<main class="main_reservar">
+		<article class="contenedor_form">
+			<h2>Reservar Habitacion</h2>
+			@if (LoginModel.EsCliente)
+			{
+				<p style="color: green; font-family: var(--poppins); text-align: center; margin-bottom: 1em;">Bienvenido al sistema Cliente. Aunque no es necesario, seria bueno que realizaras la reserva para pasar al Check-In, puedes usar la fecha de HOY para reservar.</p>
+			}
+			@if (Model.ErrorReserva)
+			{
+				<p style="color: red; font-family: var(--poppins); text-align: center; ">Recuerda que las fechas deben ser coherentes. Revisa los datos ingresados.</p>
+			}
+			<form class="formulario" method="post">
+				<div class="inputs_1">
+					<div>
+						<input type="text" onfocus="(this.type=&quot;date&quot;)" id="FechaEntrada" name="FechaEntrada" asp-for="FechaEntrada" class="form-control" required />
+						<input type="text" onfocus="(this.type=&quot;date&quot;)" id="FechaSalida" name="FechaSalida" asp-for="FechaSalida" class="form-control" required />
+					</div>
+				</div>
+
+				<button type="submit" name="buscarHabitaciones" asp-page-handler="BuscarHabitaciones" class="btn btn-primary">Buscar Habitaciones</button>
+
+				<select id="HabitacionSeleccionada" name="IdHabitacionSeleccionada" class="form-control" asp-for="IdHabitacionSeleccionada">
+					<option selected disabled>Selecciona tu habitacion</option>
+					@foreach (var habitacion in Model.Habitaciones)
+					{
+						<option value="@habitacion.Id">id de Habitacion: @habitacion.Id</option>
+					}
+				</select>
+
+				<button type="submit" name="reservarHabitacion" asp-page-handler="ReservarHabitacion" class="btn btn-primary">Reservar</button>
+			</form>
+		</article>
+	</main>
+
+	<footer>
+		<div class="derechos">
+			© Todos los derechos reservados - Benju 2023
+		</div>
+		<div class="titulo">
+			Hotel BenjuPorras
+		</div>
+		<div class="faces">
+			Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+		</div>
+	</footer>
+
+}

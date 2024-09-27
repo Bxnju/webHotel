@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Merriweather:wght@400;700&family=Poppins:wght@400;700&display=swap');
+@import url('animaciones.css');
+
+:root{
+	--dancing: 'Dancing Script', cursive;
+	--merri: 'Merriweather', serif;
+	--poppins: 'Poppins', sans-serif;
+	--dark: #140f07;
+	--dark-blue: #0f2349;
+	--mid-blue: #255eb1;
+	--blue: #53a0ff;
+	--light-blue: #90ecfb;
+	--white: #fff;
+	--black: #000;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*----------HTML y scrollbar-------*/
+
+html{
+	scroll-behavior: smooth;
+	user-select: none;
+}
+
+html::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+html::-webkit-scrollbar:vertical {
+    width: 1.5em;
+    background: var(--white);
+    padding: .4em;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--mid-blue);
+    box-shadow: 0 0 15px #000;
+}

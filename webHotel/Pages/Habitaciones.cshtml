@@ -1,0 +1,84 @@
+﻿@page
+@model webHotel.Pages.HabitacionesModel
+@{
+	ViewData["Title"] = "Habitaciones";
+}
+
+<link rel="stylesheet" href="~/css/habitaciones.css" asp-append-version="true" />
+
+
+<div id="page-loader">
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+</div>
+
+<script type="text/javascript">
+	window.onload = function () {
+		var contenedor = document.getElementById('page-loader');
+
+		contenedor.style.visibility = 'hidden';
+		contenedor.style.opacity = 0;
+	}
+</script>
+
+
+<header class="navbar visible">
+	<h2>Hotel BenjuPorras</h2>
+	<nav>
+		<a asp-area="" asp-page="/Index"><span class="material-icons">home</span>Inicio</a>
+		<a asp-area="" asp-page="/Habitaciones"><span class="material-icons">bedroom_parent</span>Habitaciones</a>
+		<a asp-area="" asp-page="/Servicios"><span class="material-icons">local_laundry_service</span>Servicios</a>
+		<a asp-area="" asp-page="/Registro"><span class="material-icons">account_circle</span>Registrarse</a>
+		<a asp-area="" asp-page="/Login"><span class="material-icons">input</span>Ingresar</a>
+	</nav>
+</header>
+
+<main class="main_habitaciones">
+	<article class="hab sencilla">
+		<div class="left">
+			<h2>Habitacion Sencilla</h2>
+			<p>Nuestra habitación sencilla es perfecta para aquellos que buscan una estancia cómoda y acogedora. Con una cama doble o dos sencillas, podrás descansar plácidamente después de un largo día de trabajo o turismo. Además, su ubicación en los pisos del 2 al 4 te permitirá disfrutar de una vista única de la ciudad desde una altura privilegiada.</p>
+			<h3>$200.000 C/N</h3>
+		</div>
+		<div class="right">
+			<img draggable="false" src="https://aquamarinamanta.com/wp-content/uploads/2019/06/estandar-1170x780.jpg">
+		</div>
+	</article>
+
+	<article class="hab ejecutiva">
+		<div class="right">
+			<img draggable="false" src="https://x.cdrst.com/foto/hotel-sf/88ee/granderesp/hotel-almirante-cartagena-colombia-general-d894fff.jpg">
+		</div>
+		<div class="left">
+			<h2>Habitacion Ejecutiva</h2>
+			<p>Si buscas un nivel superior de comodidad y lujo durante tu estancia, nuestra habitación ejecutiva es la elección perfecta. Con una cama queen o dos semidobles, y un minibar que incluye cuatro botellas de licor, dos botellas de agua, un kit de aseo personal y dos gaseosas, tendrás todo lo que necesitas al alcance de tu mano. Además, su ubicación en el piso 5 te brinda una vista impresionante de la ciudad.</p>
+			<h3>$350.000 C/N</h3>
+		</div>
+	</article>
+
+	<article class="hab suite">
+		<div class="left">
+			<h2>Habitacion Suite</h2>
+			<p>Nuestra suite es el epitome del lujo y la comodidad. Con una cama King o una cama queen y una semidoble, esta habitación te permitirá relajarte en un ambiente de elegancia y sofisticación. Además, el minibar incluye una botella de vino, cuatro botellas de licor, tres kits de aseo personal y cuatro gaseosas, así como un juego de dos batas de baño. Ubicada en el piso 6, podrás disfrutar de una vista panorámica mientras disfrutas una estancia inolvidable.</p>
+			<h3>$500.000 C/N</h3>
+		</div>
+		<div class="right">
+			<img draggable="false" src="https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/styles/landing_hotel_galeria_imagen/public/2017-07/hotel-tijuana-rio-city-express-suites-habitacion-suite-estudio-doble.jpg?itok=RanbuKrB">
+		</div>
+	</article>
+</main>
+
+<footer>
+	<div class="derechos">
+		© Todos los derechos reservados - Benju 2023
+	</div>
+	<div class="titulo">
+		Hotel BenjuPorras
+	</div>
+	<div class="faces">
+		Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+	</div>
+</footer>

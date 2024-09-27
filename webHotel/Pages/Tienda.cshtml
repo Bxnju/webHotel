@@ -1,0 +1,201 @@
+﻿@page
+@model webHotel.Pages.TiendaModel
+@{
+	ViewData["Title"] = "Tienda";
+}
+
+@if (!LoginModel.Exitoso)
+{
+
+	<script>
+
+		alert("No has iniciado sesion.");
+		window.location.href = "/Login";
+
+	</script>
+
+}
+else
+{
+
+	<link rel="stylesheet" href="~/css/tienda.css" asp-append-version="true" />
+
+	<div id="page-loader">
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+		<span class="ball-loader"></span>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var contenedor = document.getElementById('page-loader');
+
+			contenedor.style.visibility = 'hidden';
+			contenedor.style.opacity = 0;
+		}
+	</script>
+
+	<header class="navbar visible">
+		<h2>Hotel BenjuPorras</h2>
+		<nav>
+			<a asp-area="" asp-page="/IndexIngresado"><span class="material-icons">home</span>Inicio</a>
+			<a asp-area="" asp-page="/TuReserva"><span class="material-icons">event</span>Tu reserva</a>
+			<a asp-area="" asp-page="/Tienda"><span class="material-icons">store</span>Tienda</a>
+			<a asp-area="" asp-page="/Restaurante"><span class="material-icons">restaurant</span>Restaurante</a>
+			<a asp-area="" asp-page="/Servicio"><span class="material-icons">local_laundry_service</span>Servicio</a>
+			<span class="welcome">Welcome @LoginModel.usuarioGlobal.UsuarioLogin</span><form method="post"><button type="submit" asp-page-handler="Logout"><span class="material-icons">logout</span>Salir</button></form>
+		</nav>
+	</header>
+
+	<main class="main_tienda">
+		<h2 class="titulo">Compra tus productos</h2>
+		@if (Model.ErrorCheckIn)
+		{
+			<h4 style="color: red; margin: 1em 0; font-family: var(--poppins);">No puedes realizar una compra sin haber realizado primero el check-in.</h4>
+			Model.ErrorCheckIn = false;
+		}
+		@if (Model.CompraExitosa)
+		{
+			<h4 style="color: green; margin: 1em 0; font-family: var(--poppins);">Compra de Productos Exitosa.</h4>
+			Model.CompraExitosa = false;
+		}
+		<article class="lista_productos">
+			<form class="form_compra" method="post">
+				<table class="styled-table">
+					<tbody>
+						<tr>
+							<td><img src="https://api.lalicorera.com/img/extras/Licores-bog.jpg"></td>
+							<td><span class="titulo_producto">Licor</span></td>
+							<td class="precio_producto"><span class="price">$25.000 COP</span></td>
+							<td>
+								<div class="quantity-input">
+									<button type="button" class="decrement-btn">-</button>
+									<input type="number" name="Licores" value="0" min="0" max="10" readonly />
+									<button type="button" class="increment-btn">+</button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td><img src="https://media-cdn.tripadvisor.com/media/photo-s/08/f5/45/ea/nuevo-hotel-rincon-de.jpg"></td>
+							<td><span class="titulo_producto">Vino</span></td>
+							<td class="precio_producto"><span class="price">$50.000 COP</span></td>
+							<td>
+								<div class="quantity-input">
+									<button type="button" class="decrement-btn">-</button>
+									<input type="number" name="Vinos" value="0" min="0" max="10" readonly />
+									<button type="button" class="increment-btn">+</button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td><img src="https://kosante.s3.us-east-2.amazonaws.com/users/3/9AdTOSInSVprHoG1rHKGIWSJvTfPFFSP92obv6Wptc08PdfoCc.png"></td>
+							<td><span class="titulo_producto">Gaseosa</span></td>
+							<td class="precio_producto"><span class="price">$3.000 COP</span></td>
+							<td>
+								<div class="quantity-input">
+									<button type="button" class="decrement-btn">-</button>
+									<input type="number" name="Gaseosas" value="0" min="0" max="10" readonly />
+									<button type="button" class="increment-btn">+</button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td><img src="https://es.factsaboutbpa.org/wp-content/uploads/2018/08/water-bottles.png"></td>
+							<td><span class="titulo_producto">Agua</span></td>
+							<td class="precio_producto"><span class="price">$3.500 COP</span></td>
+							<td>
+								<div class="quantity-input">
+									<button type="button" class="decrement-btn">-</button>
+									<input type="number" name="Aguas" value="0" min="0" max="10" readonly />
+									<button type="button" class="increment-btn">+</button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td><img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/b0/4f/00/kit-de-aseo-personal.jpg"></td>
+							<td><span class="titulo_producto">Kit de Aseo</span></td>
+							<td class="precio_producto"><span class="price">$9.000 COP</span></td>
+							<td>
+								<div class="quantity-input">
+									<button type="button" class="decrement-btn">-</button>
+									<input type="number" name="Kits" value="0" min="0" max="10" readonly />
+									<button type="button" class="increment-btn">+</button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td><img src="https://falabella.scene7.com/is/image/FalabellaCO/20276750_1?wid=1500&hei=1500&qlt=70"></td>
+							<td><span class="titulo_producto">Bata de Baño</span></td>
+							<td class="precio_producto"><span class="price">$70.000 COP</span></td>
+							<td>
+								<div class="quantity-input">
+									<button type="button" class="decrement-btn">-</button>
+									<input type="number" name="Batas" value="0" min="0" max="10" readonly />
+									<button type="button" class="increment-btn">+</button>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="flotante">
+					<div class="checkbox-input">
+						<label>
+							<input type="checkbox" name="ServicioHabitacion" value="true" />
+							¿Desea servicio a la habitación?
+						</label>
+					</div>
+					<input type="submit" asp-page-handler="ComprarTienda" value="Confirmar">
+				</div>
+
+			</form>
+		</article>
+	</main>
+
+	<script>
+
+		const decrementButtons = document.querySelectorAll('.decrement-btn');
+		const incrementButtons = document.querySelectorAll('.increment-btn');
+		const quantityInputs = document.querySelectorAll('.quantity-input input');
+		const menuForm = document.querySelector('#menu-form');
+
+		decrementButtons.forEach((button, index) => {
+			button.addEventListener('click', () => {
+				if (quantityInputs[index].value > 0) {
+					quantityInputs[index].value--;
+				}
+			});
+		});
+
+		incrementButtons.forEach((button, index) => {
+			button.addEventListener('click', () => {
+				if (quantityInputs[index].value < 10) {
+					quantityInputs[index].value++;
+				}
+			});
+		});
+
+	</script>
+
+	<footer>
+		<div class="derechos">
+			© Todos los derechos reservados - Benju 2023
+		</div>
+		<div class="titulo">
+			Hotel BenjuPorras
+		</div>
+		<div class="faces">
+			Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+		</div>
+	</footer>
+
+
+}
+

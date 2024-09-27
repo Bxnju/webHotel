@@ -1,0 +1,94 @@
+@import url('site.css');
+
+.main_servicios{
+	padding: 10em 0 4em 0;
+	min-height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ccc;
+}
+
+.main_servicios .contenedor_servicios{
+	background: linear-gradient(90deg, var(--mid-blue), var(--blue));
+	width: clamp(500px, 80%, 1400px);
+	padding: 5em 2em 3em 3em;
+	box-shadow: -10px -10px 2em var(--white), 8px 8px 2em var(--dark-blue);
+	position: relative;
+	border-top: 3px solid var(--dark-blue);
+	z-index: 1;
+}
+.main_servicios .contenedor_servicios h2{
+	position: absolute;
+	top: -1.5em;
+	font-family: var(--merri);
+	border-radius: 2em;
+	left: calc(100% - 850px);
+	padding: 1em 2em;
+	background: var(--dark-blue);
+	color: var(--white);
+	margin: 0 auto;
+	z-index: 2;
+}
+
+.main_servicios .contenedor_servicios .servicios{
+	display: flex;
+	justify-content: center;
+	gap: 3em;
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios{
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	background: linear-gradient( to right, var(--dark), var(--dark-blue));
+	padding: 2em 1em;
+	border-radius: 2em;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios h4{
+	padding: 1em 0.5em;
+	width: 70%;
+	color: var(--white);
+	border-radius: 2em;
+	font-family: var(--poppins);
+	background: var(--mid-blue);
+	margin-bottom: 1em;
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios .card_image_1{
+	background: url('https://phantom-expansion.unidadeditorial.es/3006480ed45aa415810768d3c274cfae/crop/101x0/1000x600/f/jpg/assets/multimedia/imagenes/2021/09/09/16312096232648.jpg');
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios .card_image_2{
+	background: url('https://cdn7.craftologia.com/ss_secreto/4285/960x640/4285.jpg.jpg');
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios .card_image_3{
+	background: url('https://img.lalr.co/cms/2020/12/03171752/LOCACIONES-DESCORTES-NOV-2020-1.jpg?size=xl');
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios .card_image_4{
+	background: url('https://paulinaortiz.com/wp-content/uploads/2015/04/Dise%C3%B1o-MANGROOVE-tienda-969x650.jpg');
+}
+
+.main_servicios .contenedor_servicios .servicios .card_servicios .card_image{
+	width: 80%;
+	height: 8em;
+	border-radius: 1em;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+.main_servicios .contenedor_servicios .servicios .card_servicios .descripcion{
+	font-family: var(--poppins);
+	font-size: .8em;
+	margin-top: 1em;
+	width: 90%;
+	color: #ccc;
+}

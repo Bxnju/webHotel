@@ -1,0 +1,85 @@
+﻿@page
+@model webHotel.Pages.ServiciosModel
+@{
+    ViewData["Title"] = "Servicios";
+}
+
+<link rel="stylesheet" href="~/css/servicios.css" asp-append-version="true" />
+
+<div id="page-loader">
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+	<span class="ball-loader"></span>
+</div>
+
+<script type="text/javascript">
+	window.onload = function () {
+		var contenedor = document.getElementById('page-loader');
+
+		contenedor.style.visibility = 'hidden';
+		contenedor.style.opacity = 0;
+	}
+</script>
+
+
+<header class="navbar visible">
+	<h2>Hotel BenjuPorras</h2>
+	<nav>
+		<a asp-area="" asp-page="/Index"><span class="material-icons">home</span>Inicio</a>
+		<a asp-area="" asp-page="/Habitaciones"><span class="material-icons">bedroom_parent</span>Habitaciones</a>
+		<a asp-area="" asp-page="/Servicios"><span class="material-icons">local_laundry_service</span>Servicios</a>
+		<a asp-area="" asp-page="/Registro"><span class="material-icons">account_circle</span>Registrarse</a>
+		<a asp-area="" asp-page="/Login"><span class="material-icons">input</span>Ingresar</a>
+	</nav>
+</header>
+
+
+<main class="main_servicios">
+	<article class="contenedor_servicios">
+		<h2>Nuestros Servicios</h2>
+		<div class="servicios">
+			<div class="card_servicios">
+				<h4>Lavado</h4>
+				<div class="card_image card_image_1"></div>
+				<p class="descripcion">
+					Si deseas mantener tus prendas en perfecto estado y con un acabado profesional, el servicio de planchado de prendas es justo lo que necesitas. Nuestro personal altamente capacitado utilizará técnicas avanzadas y equipos de alta calidad para planchar tus prendas con precisión y rapidez.
+				</p>
+			</div>
+			<div class="card_servicios">
+				<h4>Planchado</h4>
+				<div class="card_image card_image_2"></div>
+				<p class="descripcion">
+					Ya sea que necesites lavar tus prendas de trabajo o tus prendas personales, nuestro servicio de lavado de prendas es la opción perfecta para ti. Ofrecemos una amplia gama de opciones de lavandería, desde lavado en seco hasta lavado de prendas delicadas con una atención al detalle.
+				</p>
+			</div>
+			<div class="card_servicios">
+				<h4>Restaurante</h4>
+				<div class="card_image card_image_3"></div>
+				<p class="descripcion">
+					En nuestro restaurante, te ofrecemos una experiencia gastronómica excepcional, con platos elaborados con ingredientes frescos y de alta calidad. Desde platos clásicos hasta creaciones innovadoras, nuestra cocina es una deliciosa muestra de los sabores locales e internacionales.
+				</p>
+			</div>
+			<div class="card_servicios">
+				<h4>Tienda</h4>
+				<div class="card_image card_image_4"></div>
+				<p class="descripcion">
+					Si necesitas productos básicos o algo especial, nuestra tienda tiene todo lo que necesitas. Ofrecemos una amplia selección de artículos de primera necesidad, desde productos de higiene personal hasta bocadillos y bebidas. También puedes encontrar regalos y recuerdos únicos para llevarte a casa.
+				</p>
+			</div>
+		</div>
+	</article>
+</main>
+
+<footer>
+	<div class="derechos">
+		© Todos los derechos reservados - Benju 2023
+	</div>
+	<div class="titulo">
+		Hotel BenjuPorras
+	</div>
+	<div class="faces">
+		Para toda la familia  <span class="material-icons">child_care</span> <span class="material-icons">face_6</span> <span class="material-icons">face_3</span> <span class="material-icons">face_4</span>
+	</div>
+</footer>
